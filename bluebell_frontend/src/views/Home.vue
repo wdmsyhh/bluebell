@@ -135,7 +135,7 @@ export default {
     getPostList() {
       this.$axios({
         method: "get",
-        url: "/posts2",
+        url: "/post2",
         params: {
           page: this.page,
           order: this.order,

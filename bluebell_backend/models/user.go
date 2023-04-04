@@ -40,7 +40,7 @@ func (r *RegisterForm) UnmarshalJSON(data []byte) (err error) {
 	required := struct {
 		UserName        string `json:"username"`
 		Password        string `json:"password"`
-		ConfirmPassword string `json:"confirm_password"`
+		ConfirmPassword string `json:"re_password"`
 	}{}
 	err = json.Unmarshal(data, &required)
 	if err != nil {

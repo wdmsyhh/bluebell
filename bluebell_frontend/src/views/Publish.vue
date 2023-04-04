@@ -4,14 +4,14 @@
     <div class="left">
       <div class="post-name">我好想写点什么</div>
       <div class="post-type">
-        <input type="text" class="post-type-value" placeholder="选择一个频道" v-model="selectCommunity.name" @click="showCommunity()"/>
+        <input type="text" class="post-type-value" placeholder="选择一个频道" v-model="selectCommunity.community_name" @click="showCommunity()"/>
         <ul class="post-type-options" v-show="showCommunityList">
           <li class="post-type-cell"
             v-for="(community, index) in communityList"
-            :key="community.id"
+            :key="community.community_id"
             @click="selected(index)"
           >
-            {{community.name}}
+            {{community.community_name}}
           </li>
         </ul>
         <i class="p-icon"></i>
@@ -85,7 +85,7 @@ export default {
         data: JSON.stringify({
           title: this.title,
           content: this.content,
-          community_id: this.selectCommunity.id
+          community_id: this.selectCommunity.community_id
         })
       })
         .then(response => {
